@@ -13,6 +13,15 @@ expo-env.d.ts
 *.apk
 *.aab
 *.ipa
+.kotlin/
+
+# Signing keys and certificates — never commit
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.pem
 
 # Env
 .env
@@ -25,8 +34,17 @@ coverage/
 # Logs
 *.log
 npm-debug.*
+.metro-health-check*
+
+# Build artifacts
+*.tsbuildinfo
+*.orig.*
 
 # OS / editor
 .DS_Store
 Thumbs.db
 .idea/
+.vscode/
+
+# Local agent session state — machine-specific, not project config
+.claude/

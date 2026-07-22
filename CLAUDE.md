@@ -35,11 +35,30 @@ Learning and portfolio project — optimize for understanding, not speed.
 
 ## Structure
 
-<!-- TODO: fill in once the Expo project exists -->
+- `src/app/` — screens. File-based routing (expo-router): each file is a route.
+  - `_layout.tsx` — root layout, wraps every screen (`<Stack>`).
+  - `index.tsx` — the `/` route (home).
+- `assets/images/` — app icon, splash, Android adaptive icon, web favicon.
+  Referenced from `app.json`; not imported in code.
+- `app.json` — app identity: name, icon, Android package, plugins, EAS project id.
+- `eas.json` — cloud build profiles (`development`, `preview`, `production`).
+- `tsconfig.json` — `strict` on; `@/*` maps to `src/*`.
+
+Path alias: import with `@/...` (e.g. `@/components/todo-item`), not relative `../..`.
 
 ## Commands
 
-<!-- TODO: fill in (start, android, lint, typecheck, test) -->
+| Command | Does |
+| --- | --- |
+| `npx expo start` | Start Metro dev server; open the app via the dev build. |
+| `npx expo start --web` | Run in the browser (fast, no device needed). |
+| `npm run android` | Start with the Android target selected. |
+| `npm run lint` | Run Expo's ESLint. |
+| `npx tsc --noEmit` | Type-check without emitting files. |
+| `npx expo install <pkg>` | Add a dependency at the SDK-correct version. |
+| `eas build --profile development --platform android` | Rebuild the dev client (needed only when native code changes). |
+
+No `test` script yet — added when Jest is set up.
 
 ## Env
 
